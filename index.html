@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background: #4b3f72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        nav {
+            background: #222;
+            text-align: center;
+            padding: 12px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+        nav a:hover {
+            color: #b9a7ff;
+        }
+        section {
+            background: white;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #4b3f72;
+        }
+        .cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #eee;
+            padding: 18px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 180px;
+        }
+        .card h3 {
+            color: #4b3f72;
+        }
+        .carousel {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .carousel img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 8px;
+            border: 0;
+            background: #4b3f72;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pedro Vizalla</h1>
+        <p>Mi primera página web</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#programacion">Programación</a>
+        <a href="#tecnologia">Tecnología</a>
+    </nav>
+    <section id="inicio">
+        <h2>Bienvenido</h2>
+        <p>
+            Esta es mi primera página web creada como práctica
+            del curso de GitHub.
+        </p>
+        <p>
+            Aquí presento algunos temas relacionados con la
+            tecnología y programación.
+        </p>
+    </section>
+    <section id="sobre">
+        <h2>Sobre mí</h2>
+        <p>
+            Mi nombre es <b>Pedro Eduardo Vizalla Aguayo</b>.
+        </p>
+        <p>
+            Soy estudiante y estoy aprendiendo programación y
+            diferentes herramientas tecnológicas.
+        </p>
+    </section>
+    <section id="programacion">
+        <h2>Programación</h2>
+        <div class="cards">
+
+            <div class="card">
+                <h3>HTML</h3>
+                <p>
+                    Se utiliza para crear la estructura
+                    de una página web.
+                </p>
+            </div>
+            <div class="card">
+                <h3>CSS</h3>
+                <p>
+                    Permite cambiar el diseño y la apariencia
+                    de una página.
+                </p>
+            </div>
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>
+                    Permite agregar interacción y funciones
+                    a una página web.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="tecnologia">
+        <h2>Tecnología</h2>
+        <p>
+            La tecnología nos permite crear diferentes
+            herramientas y soluciones para facilitar
+            nuestras actividades.
+        </p>
+        <div class="carousel">
+            <img id="imagen"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+                alt="Programación">
+
+            <br>
+            <button onclick="anterior()">Anterior</button>
+            <button onclick="siguiente()">Siguiente</button>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 - Pedro Vizalla | Curso GitHub</p>
+    </footer>
+    <script>
+        let imagenes = [
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+        ];
+
+        let posicion = 0;
+
+        function mostrar() {
+            document.getElementById("imagen").src = imagenes[posicion];
+        }
+        function siguiente() {
+            posicion = (posicion + 1) % imagenes.length;
+            mostrar();
+        }
+        function anterior() {
+            posicion = (posicion - 1 + imagenes.length) % imagenes.length;
+            mostrar();
+        }
+    </script>
+</body>
+</html>
